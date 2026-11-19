@@ -7,6 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Mission">
+<link rel="icon" type="image/png" href="icons/icon_512.png">
+<link rel="apple-touch-icon" href="icons/icon_180.png">
 <title>Mission · 大一上冲刺</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -733,8 +735,10 @@ document.querySelectorAll('nav button').forEach(b=>{
 document.getElementById('moreBtn').onclick = ()=>{
   const l = document.getElementById('moreList');
   const on = l.classList.toggle('on');
+  const numEl = document.getElementById('moreNum');
+  const n = numEl ? numEl.textContent : '0';
   document.getElementById('moreBtn').innerHTML =
-    on ? '▴ 收起' : `▾ 还有 <em id="moreNum">${document.getElementById('moreNum').textContent}</em> 件（做不完不算欠账）`;
+    on ? '▴ 收起' : `▾ 还有 <em id="moreNum">${n}</em> 件（做不完不算欠账）`;
 };
 document.getElementById('toPick').onclick = ()=>{
   document.querySelector('nav button[data-v="edit"]').click();
